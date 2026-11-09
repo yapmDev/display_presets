@@ -1,0 +1,62 @@
+/* ============================================================
+   display-presets' layout, on top of the design system in base.css.
+   Only padding, margins and borders live here; colours, type and
+   components come from base.css through `ds-` classes.
+   Sizes come from base.css's closed set (spacing 2 4 8 12 16 20).
+   ============================================================ */
+
+@import url("base.css");
+
+#preset-list {
+    padding: 8px 12px 4px 12px;
+}
+
+#preset-row {
+    padding: 8px 8px 8px 12px;
+    margin: 4px 0;
+}
+
+#empty-label {
+    padding: 20px;
+}
+
+#status-label {
+    padding: 4px 16px;
+}
+
+#footer {
+    padding: 8px 12px 12px 12px;
+}
+
+#rename-body {
+    padding: 12px;
+}
+
+#bar-separator {
+    margin: 4px 2px;
+}
+
+/* Drawn bare, but as big a target as any icon button: base.css's
+   control height, and square. GTK3 adds padding on top of min-width,
+   so the padding is zeroed to land on 30x30 exactly. */
+#btn-row-menu {
+    min-width: 30px;
+    min-height: 30px;
+    padding: 0;
+}
+
+/* ---- drag and drop ------------------------------------------ */
+
+/* The row being dragged stays in place, faded, until it is dropped. */
+#preset-row.dragging {
+    opacity: 0.4;
+}
+
+/* Where the drop will land: an accent line in the gap above or below. */
+#preset-row.drop-before {
+    box-shadow: 0 -3px 0 0 @ds_accent;
+}
+
+#preset-row.drop-after {
+    box-shadow: 0 3px 0 0 @ds_accent;
+}
